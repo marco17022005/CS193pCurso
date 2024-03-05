@@ -11,14 +11,14 @@ struct ContentView: View {
     var body: some View {
         HStack{
             Cardview(isFaceUp: true)
-            Cardview()
+            Cardview(isFaceUp: true)
             Cardview()
             Cardview()
 
             
         }
         
-
+        .foregroundColor(.red)
         .padding()
     }
 }
@@ -28,12 +28,16 @@ struct Cardview: View{
     
     var body: some View {
         ZStack {
-            
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(.white)
-            RoundedRectangle(cornerRadius: 12)
-                .strokeBorder(lineWidth: 3)
-            Text("👻").font(.largeTitle)
+            if isFaceUp{
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(.white)
+                RoundedRectangle(cornerRadius: 12)
+                    .strokeBorder(lineWidth: 3)
+                Text("👻").font(.largeTitle)
+            }
+            else{
+                RoundedRectangle(cornerRadius: 12)
+            }
 
         }
 
