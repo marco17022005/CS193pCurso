@@ -14,7 +14,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
+            ScrollView{
             cardsDisplay
+            }
             Spacer()
             cardCountAdjusters
         }
@@ -26,6 +28,7 @@ struct ContentView: View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
             ForEach(0..<cardCount,id: \.self){ index in
             Cardview(content: emojis[index])
+                    .aspectRatio(2/3, contentMode: .fit)
             }
         }
         .foregroundColor(.red)
