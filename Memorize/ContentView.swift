@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack{
-            let emojis: Array<String> = ["","",]
+            let emojis: Array<String> = ["👻","👹","😺","😯","🥳","🤯","👺","👾","👽","🫨","🙄","🤥"]
             Cardview(content: emojis[0], isFaceUp: true)
             Cardview(content: emojis[1], isFaceUp: true)
             Cardview(content: "")
