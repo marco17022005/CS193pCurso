@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis: Array<String> = ["👻","👹","😺","😯","🥳","🤯","👺","👾","👽","🫨","🙄","🤥"]
+    let emojis: Array<String> = ["👻","👹","💀","☠️","🤖","🎃","👺","👾","👽"]
+    let emojis2: Array<String> = ["🙄","🤥","🤮","🤧","🤧","😷","🤒"]
+    let emojis3: Array<String> = ["❤️","😘","😍","🥰","💕","💙","😻","💔"]
     
    @State var cardCount = 4
     
     var body: some View {
         VStack{
+            gameTitle
             ScrollView{
             cardsDisplay
             }
@@ -21,6 +24,14 @@ struct ContentView: View {
             cardCountAdjusters
         }
         .padding()
+        
+    }
+    
+    var gameTitle: some View{
+        Text("MEMORIZE GAME")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .foregroundColor(.red)
         
     }
     
@@ -60,6 +71,11 @@ struct ContentView: View {
     
     var cardAdd: some View {
         cardCountAdjuster(by: +1, symbol: "rectangle.portrait.badge.plus")
+    }
+    
+    func cardChooser() -> some View{
+        
+        
     }
 }
 
